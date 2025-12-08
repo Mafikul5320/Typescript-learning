@@ -24,3 +24,28 @@ const chackUser = (Role: role) => {
 };
 console.log(chackUser("admin"));
 
+type karimHomeInfo = {
+    companyName: string
+    TotalHome: number,
+    isCar: boolean
+}
+type KarimInfo = {
+    name: string,
+    Age: number,
+    Address: string,
+    isMarried: boolean
+}
+
+type AllInfoKarim = karimHomeInfo & KarimInfo;
+
+
+const karim: AllInfoKarim = {
+    companyName: "ABC",
+    TotalHome: 20,
+    isCar: true,
+    name: "karim",
+    Age: 20,
+    Address: "Dhaka",
+    isMarried: false
+};
+console.log(karim)
