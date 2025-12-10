@@ -1,4 +1,4 @@
-const discount = (input: unknown) => {
+const discount = (input: number | string | null): number | string | undefined => {
 
     if (typeof input === "number") {
         const discount = input * 0.1;
@@ -10,8 +10,13 @@ const discount = (input: unknown) => {
     } else {
         console.log("invalid value");
     }
+
+    return undefined
 }
 
-discount(100)
-discount("100 Tk")
+const result1 = discount(100) as number
+
+
+const result2 =discount("100 Tk") as string;
+
 discount(null)
