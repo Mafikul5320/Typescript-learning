@@ -1,4 +1,4 @@
-class Share {
+class Person {
     name: string;
 
     constructor(name: string) {
@@ -10,7 +10,7 @@ class Share {
     }
 };
 
-class Student extends Share {
+class Student extends Person {
     Class: number;
 
     constructor(name: string, Class: number) {
@@ -22,7 +22,7 @@ class Student extends Share {
     }
 
 }
-class Teacher extends Share {
+class Teacher extends Person {
     subject: string;
 
     constructor(name: string, subject: string) {
@@ -34,11 +34,20 @@ class Teacher extends Share {
     }
 
 };
-const Students = (user: Share) => {
-    if (user instanceof Student) {
+
+const isStudent = (student: Person) => {
+    return student instanceof Student
+}
+const isTeacher = (student: Person) => {
+    return student instanceof Teacher
+}
+
+
+const Students = (user: Person) => {
+    if (isStudent(user)) {
         user.StudyTime(5)
     }
-    else if(user instanceof Teacher){
+    else if (isTeacher(user)) {
         user.SirReview("very Good Teacher")
     }
 }
